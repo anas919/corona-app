@@ -176,4 +176,23 @@ class UserController extends Controller
             return response()->json(['success'=>'User does not have mixers']);
         }
     }
+    public function updateUser(Request $request, $user_id)
+    {
+        $user = User::find($user_id);
+        if($request->name)
+            $user->name = $request->name;
+        if($request->age)
+            $user->age = $request->age;
+        if($request->gender)
+            $user->gender = $request->gender;
+        if($request->hascorona)
+            $user->hascorona = $request->hascorona;
+        if($request->mixers)
+            $user->mixers = $request->mixers;
+        if($request->province_id)
+            $user->province_id = $request->province_id;
+        $user->save();
+
+        return response()->json(['success'=>'Modifiè avec succès', 'user'=>$user]);
+    }
 }

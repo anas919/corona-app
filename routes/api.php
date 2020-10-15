@@ -28,3 +28,4 @@ Route::post('users/{user_id}/upload_mixers', [UserController::class, 'uploadMixe
 Route::get('users/{user_id}/mark_sick', [UserController::class, 'markAsSick'])->name('users.markAsSick');
 Route::get('users/{person1}/{person2}/mix', [UserController::class, 'mixUsers'])->name('users.mixUsers');
 Route::get('users/{user_id}/fetch_mixers', [UserController::class, 'fetchMixers'])->name('users.fetchMixers');
+Route::post('users/{user_id}/update_user', [UserController::class, 'updateUser'])->name('users.updateUser');
